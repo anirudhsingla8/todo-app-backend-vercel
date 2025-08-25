@@ -82,7 +82,10 @@ export default async function handler(request, response) {
             return response.status(401).json({ message: 'Invalid credentials' });
         }
 
-        return response.status(200).json({ message: 'Login successful', userId: user.id });
+        // Exclude password from the user object before sending the response
+        const { password: _, ...userWithoutPassword } = user;
+
+        return response.status(200).json({ message: 'Login successful', user: userWithoutPassword });
     }
 
     // Route: Get Todos for a User
