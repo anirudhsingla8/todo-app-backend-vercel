@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Vercel-compatible backend for todo application",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "vercel dev",
     "build": "echo 'No build step required'"
